@@ -1,0 +1,308 @@
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #cecece;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+    color: #4b79a1;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Заголовок */
+header {
+    background: linear-gradient(to right, #4b79a1, #283e51);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: whitesmoke;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 0 0 20px;
+}
+
+header .button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffffff;
+    color: #4b79a1;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header .button:hover {
+    background-color: #e3e3e3;
+}
+
+/* Секция "О проекте" */
+#about {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #cecece;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 30px;
+    text-align: justify;
+    color: #444;
+    line-height: 1.8;
+}
+
+#about p:last-child {
+    margin-bottom: 0;
+}
+
+.about-highlight {
+    font-weight: bold;
+    color: #283e51;
+    font-family: bankgothic lt bt;
+}
+
+/* Секция "Исторические факты" */
+/* Стили для раздела исторических фактов */
+#historical-facts {
+    padding: 60px 20px;
+    background-color: #cecece;
+    text-align: center;
+}
+
+#historical-facts h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.facts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.fact-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fact-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fact-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.fact-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #283e51;
+}
+
+.fact-item p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+
+/* Секция "Авторы проекта" */
+#authors {
+    padding: 60px 20px;
+    background-color: #cecece;
+    text-align: center;
+}
+
+#authors h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.authors-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.author-card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.author-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.author-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Подвал */
+footer {
+    background-color: #283e51;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Меню */
+:root {
+    --primColor: #dcdcdc;
+    --secoColor: #555555;
+    --cornerRad: 4px;
+}
+
+details {
+    margin: 40px;
+    position: fixed;
+    position: absolute;
+    top: 400px;
+    left: 270px;
+}
+
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+
+summary:hover {
+    transform: scale(1.1);
+}
+
+summary::marker {
+    font-size: 0;
+}
+summary::after {
+    content: "III";
+    letter-spacing: -1px;
+  }
+  summary:hover {
+    transform: scale(1.1);
+  }
+  summary::marker {
+    font-size: 0;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  details[open] .menu {
+    animation-name: menuAnim;
+  }
+  details[open] summary::before {
+    content: "X";
+  }
+  details[open] summary::after {
+    content: "";
+  }
+  .menu {
+    height: 0;
+    width: fit-content;
+    border-radius: var(--cornerRad);
+    background-color: var(--primColor);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    animation: closeMenu 300ms ease-in-out forwards;
+  }
+  .menu a {
+    padding: 12px 24px;
+    margin: 0 16px;
+    color: var(--secoColor);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    text-align: center;
+    transition: filter 200ms linear 0s;
+  }
+  .menu a:nth-of-type(1) {
+    padding-top: 24px;
+  }
+  .menu a:nth-last-of-type(1) {
+    border-bottom: none;
+  }
+  .menu a:hover {
+    filter: brightness(200%);
+  }
+  details[open]::before {
+    animation: fadeMe 300ms linear forwards;
+  }
+
+
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 200px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}

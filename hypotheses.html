@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гипотезы происхождения белорусов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие стили */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #cecece;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Заголовок */
+        header {
+            background: linear-gradient(to right, #4b79a1, #283e51);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Секция гипотез */
+        section {
+            padding: 50px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .card-content .d  {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4b79a1;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .card-content a:hover {
+            background-color: #283e51;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 100px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            max-width: 5000px;
+            text-align: center;
+        }
+
+        .modal h3 {
+            margin-top: 0;
+        }
+
+        .modal p {
+            margin: 20px 0;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            background-color: #4b79a1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal button:hover {
+            background-color: #283e51;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #283e51;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Гипотезы происхождения белорусов</h1>
+    <p>Изучите основные теории о происхождении белорусского народа</p>
+</header>
+
+<section>
+    <h2>Основные концепции</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Yefim_Karskiy.jpg/180px-Yefim_Karskiy.jpg" alt="Племенная концепция">
+            <div class="card-content">
+                <h3>Племенная концепция</h3>
+                <p style='font-size: 20px ; font-weight:100; font-family: bankgothic lt bt;'> <a href="https://ru.wikipedia.org/wiki/Карский,_Евфимий_Фёдорович">Евфимий Фёдорович Карский</a> основал, что белорусский народ представляет собой
+                    результат объединения восточнославянских племён – кривичей, дреговичей,
+                    радимичей.</p>
+                <a class="d" class="href="javascript:void(0)" onclick="openModal('modal1')">Подробнее</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://avatars.mds.yandex.net/get-entity_search/44099/135137629/S600xU_2x" alt="Концепция славянского автохтонизма:">
+            <div class="card-content">
+                <h3>Концепция славянского автохтонизма</h3>
+                <p style='font-size: 20px ; font-weight:100; font-family: bankgothic lt bt;'><a  href="https://ru.wikipedia.org/wiki/Нидерле,_Любор">Любора Нидерле</a>, который считал часть белорусских земель (Припятское
+                    Полесье) наиболее древней частью славянской прародины.</p>
+                <a class="d" href="javascript:void(0)" onclick="openModal('modal2')">Подробнее</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://avatars.mds.yandex.net/get-entity_search/2487574/990910639/S600xU_2x" alt="Концепция «древнерусской народности»">
+            <div class="card-content">
+                <h3>Концепция «древнерусской народности»</h3>
+                <p style='font-size: 20px ; font-weight:100; font-family: bankgothic lt bt;'>Истоки этих представлений прослеживаются в работах академика
+                    <a href="https://ru.wikipedia.org/wiki/Шахматов,_Алексей_Александрович">A.Шахматова</a>, окончательно концепция была разработана и приобрела статус
+                    официально признанной в советской историографии.</p>
+                <a class="d" href="javascript:void(0)" onclick="openModal('modal3')">Подробнее</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://avatars.mds.yandex.net/i?id=fbf9ae735b9b8caeccd75b8e9cd7d128-5342217-images-thumbs&n=13" alt="Субстратная «балтская» концепция.">
+            <div class="card-content">
+                <h3>Субстратная «балтская» концепция</h3>
+                <p style='font-size: 20px ; font-weight:100; font-family: bankgothic lt bt;'>Автором концепции является
+                    советский археолог <a href="https://ru.wikipedia.org/wiki/Седов,_Валентин_Васильевич">В. В. Седов</a>. В ходе расселения в Восточной Европе славяне
+                    смешивались с местным дославянским населением.</p>
+                <a class="d" href="javascript:void(0)" onclick="openModal('modal4')">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="modal1" class="modal">
+    <h3 style='font-size: 30px ; font-weight:100; font-family: impact;'>Племенная концепция</h3>
+    <p style='font-size: 24px ; font-weight:100; font-family: bankgothic lt bt;'>Евфимий Фёдорович Карский полагал, что этническое
+        сближение этих племен началось в эпоху политической
+        раздробленности Киевской Руси, а окончательное слияние в
+        единую, белорусскую, народность, произошло в результате их
+        объединения в Великом Княжестве Литовском в XIII–XIV вв.
+        Локальным вариантом концепции является т.н. «кривичская»
+        теория происхождения белорусов (В. Ластовский) ↔ главным
+        этническим компонентом белорусов были кривичи, создавшие самостоятельные
+        Полоцкое, Смоленское и Псковское княжества; именно кривичские диалекты, по
+        мнению В. Ластовского, стали основой белорусского языка.
+        Слабым местом «племенной »концепции является отсутствие
+        убедительного объяснения, почему в составе белорусского этноса происходит
+        интеграция именно полоцких кривичей, дреговичей и радимичей; почему часть
+        кривичей (смоленские, псковские, тверские) позже влились в состав русского, а не
+        белорусского, народа, и т.д.</p>
+    <button onclick="closeModal('modal1')">Закрыть</button>
+</div>
+
+<div id="modal2" class="modal">
+    <h3 style='font-size: 30px ; font-weight:100; font-family: impact;'>Концепция славянского автохтонизма</h3>
+    <p style='font-size: 24px ; font-weight:100; font-family: bankgothic lt bt;'>Белорусский историк Митрофан Довнар-
+        Запольский также полагал, что белорусы были
+        исконным народом на своей земле: белорусский
+        народ никогда не смешивался с представителями
+        других народностей, олицетворяет собой идеальный
+        славянский антропологический тип, в то время как
+        великорусы смешивались с финскими и тюркскими
+        племенами, а украинцы представляют собой пёструю этническую смесь славян с
+        тюрками.
+        Концепция «славянского автохтонизма» возникла еще до того, как был
+        накоплен массив археологических и антропологических данных, имеющихся в
+        распоряжении современных исследователей. В настоящее время известно, что
+        лишь часть территории Беларуси (Полесье) входила в состав славянской
+        прародины, на большей же ее части накануне славянского расселения проживали
+        балтские племена, кроме того, на территории Белорусского Подвинья,
+        фиксируются следы присутствия финно-угоров. В этой связи ни о какой особой
+        «чистоте исходных праславянских черт» в отношении белорусского этноса
+        говорить не приходится.</p>
+    <button onclick="closeModal('modal2')">Закрыть</button>
+</div>
+
+<div id="modal3" class="modal">
+    <h3 style='font-size: 30px ; font-weight:100; font-family: impact;'>Концепция «древнерусской народности»</h3>
+    <p style='font-size: 24px ; font-weight:100; font-family: bankgothic lt bt;'>В IX–XIII вв.
+        сформировалась древнерусская народность – общий предок современных
+        восточнославянских народов (белорусов, русских, украинцев). Восточные славяне
+        распались на три ветви и образовали три близкородственные, но самостоятельные
+        народы в результате неблагоприятных внешнеполитических обстоятельств, таких
+        как монгольское нашествие и потеря древнерусской государственности.
+        Вхождение восточнославянских земель в разные государственные образования
+        привело к закреплению и углублению местных языковых и культурных различий,
+        которые проявляются в языке и культуре современных белорусов, русских и
+        украинцев.</p>
+    <button onclick="closeModal('modal3')">Закрыть</button>
+</div>
+<div id="modal4" class="modal">
+    <h3 style='font-size: 30px ; font-weight:100; font-family: impact;'>Субстратная «балтская» концепция</h3>
+    <p style='font-size: 24px ; font-weight:100; font-family: bankgothic lt bt;'>Несмотря на языковую
+        славянскую ассимиляцию, новые этнические объединения впитали в себя ряд
+        местных культурных черт. Так возникли самобытные языки и самобытная духовная
+        
+        и материальная культура каждого из восточнославянских народов. Согласно
+        концепции В. В. Седова, славяне – предки современных белорусов, имеют
+        балтский субстрат (т.е. основу, на которую наложились славянские особенности),
+        современные украинцы – иранский, русские – финно-угорский. К настоящему
+        времени накоплен целый комплекс научных фактов, свидетельствующих о том,
+        что до появления славян на большей части территории Беларуси проживали
+        балтоязычные племена (балтские элементы в материальной культуре, в
+        белорусском языке; балтские по происхождению названия рек и озер и т.д.).
+        Данная концепция не дает ответа на вопрос, почему население,
+        проживавшее в эпоху железа на белорусской территории, входившей в состав
+        славянской прародины (Полесье), позже интегрировалось в состав белорусского
+        этноса, а балтское население междуречья Волги и Оки, стало частью русского
+        народа.</p>
+    <button onclick="closeModal('modal4')">Закрыть</button>
+</div>
+<div class="overlay" id="overlay" onclick="closeAllModals()"></div>
+<div style="text-align: center; margin: 20px 0;">
+    <a href="index.html" class="back-to-top">Вернуться на главную</a>
+</div>
+
+<style>
+    .back-to-top {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4b79a1;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .back-to-top:hover {
+        background-color: #283e51;
+    }
+</style>
+<footer>
+    <p>&copy; 2024 Полоцкий государственный университет имени Ефросинии Полоцкой.</p>
+</footer>
+
+<script>
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function closeAllModals() {
+        document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
