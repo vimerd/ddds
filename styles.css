@@ -254,6 +254,56 @@ summary::after {
   details[open] summary::after {
     content: "";
   }
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    /* Перемещение меню */
+    details {
+        position: static; /* Убираем фиксированное позиционирование */
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    summary {
+        width: 40px; /* Увеличиваем кнопку для удобства касания */
+        height: 40px;
+        font-size: 1.2rem;
+        padding: 12px;
+        background-color: #4b79a1; /* Цвет кнопки для контраста */
+        color: white;
+        border: none;
+        border-radius: 50%;
+    }
+
+    summary:hover {
+        transform: scale(1.1);
+    }
+
+    .menu {
+        width: 100%; /* Меню занимает всю ширину */
+        margin: 0 auto;
+        box-shadow: none; /* Убираем тень */
+        border: none;
+        padding: 0;
+    }
+
+    .menu a {
+        display: block; /* Ссылки в виде блоков */
+        padding: 15px;
+        margin: 0;
+        color: white;
+        background-color: #4b79a1;
+        border-bottom: 1px solid #2c3e50;
+    }
+
+    .menu a:hover {
+        background-color: #283e51;
+    }
+
+    details[open] .menu {
+        animation-name: none; /* Отключение анимации для мобильных */
+    }
+}
+
   .menu {
     height: 0;
     width: fit-content;
